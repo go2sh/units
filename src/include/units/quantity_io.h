@@ -28,8 +28,8 @@
 
 namespace units {
 
-template<typename CharT, typename Traits, Quantity Q>
-std::basic_ostream<CharT, Traits>& operator<<(std::basic_ostream<CharT, Traits>& os, const Q& q)
+template<typename CharT, typename Traits, typename D, typename U, typename Rep>
+std::basic_ostream<CharT, Traits>& operator<<(std::basic_ostream<CharT, Traits>& os, const quantity<D, U, Rep>& q)
   requires requires { os << q.count(); }
 {
   if(os.width()) {
